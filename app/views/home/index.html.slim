@@ -1,13 +1,5 @@
 h1 Home
-- if user_signed_in?
-  p
-    = current_user.user_name
-    | でログイン中
-  = link_to "会話一覧", talks_path
-  br
-  = link_to "ログアウト", destroy_user_session_path, method: :delete
-- else
-  .btn-group-signup-or-signin
-    = link_to "ユーザー登録", new_user_registration_path, class: "btn btn-signup"
-    | または
-    = link_to "ログイン", new_user_session_path, class: "btn btn-signin"
+.btn-group-signup-or-signin
+  = link_to "ユーザー登録", new_user_registration_path, class: "btn btn-signup"
+  | または
+  = link_to "ログイン", new_user_session_path, class: "btn btn-signin"
