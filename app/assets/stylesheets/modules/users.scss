@@ -1,0 +1,33 @@
+.user-summary {
+    display: flex;
+    align-items: center;
+
+    form {
+        margin: 0;
+    }
+
+    button:hover #text-added {
+        display: none;
+    }
+
+    #text-remove {
+        display: none;
+    }
+
+    button:hover #text-remove {
+        display: block;
+    }
+}
+
+.username {
+    font-size: 140%;
+    width: 15em;
+
+    a {
+        color: black;
+    }
+}
+
+.inner-button {
+    width: 4em;
+}

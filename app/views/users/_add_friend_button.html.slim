@@ -1,0 +1,5 @@
+= form_with url: friendships_path, scope: :friendship, class: "add-friend" do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  = f.hidden_field :friend_id, value: user.id
+  = button_tag class: "btn btn-outline-primary" do
+    .inner-button 追加

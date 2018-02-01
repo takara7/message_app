@@ -1,0 +1,16 @@
+h1 ユーザー一覧
+
+.card
+  ul.list-group.list-group-flush
+    - @users.each do |user|
+      li.list-group-item
+        .user-summary
+          span.username
+            = link_to user.display_name, user
+          - if current_user == user
+            = link_to "プロフィール更新", edit_user_registration_path, class: "btn btn-outline-primary"
+          - else
+            - if current_user.added_friend? user
+              = render "remove_friend_button", friendship: current_user.friendship_to(user)
+            - else
+              = render "add_friend_button", user: user

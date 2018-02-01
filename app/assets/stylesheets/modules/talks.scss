@@ -1,0 +1,40 @@
+// index
+.last-talk {
+    color: #666666;
+    font-size: 90%;
+}
+
+// show
+#talks-container {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+    margin: 0 auto;
+}
+
+.time {
+    font-size: small;
+    color: #666666;
+}
+
+.talk {
+    border-radius: 8px;
+    max-width: 25em;
+    margin: 3px 0;
+    padding: 5px;
+    word-wrap: break-word;
+}
+
+.my-talk {
+    background-color: #99ff99;
+    float: right;
+}
+
+.others-talk {
+    background-color: #9999ff;
+    float: left;
+}
+
+#talk-post-form {
+    display: flex;
+}

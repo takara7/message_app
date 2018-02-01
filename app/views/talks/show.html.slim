@@ -1,0 +1,10 @@
+h1 = "#{@to_user.display_name} との会話"
+= link_to '戻る', talks_path
+
+#talks-container
+  = render @talks
+hr
+= form_with url: talks_path, scope: :talk, id: "talk-post-form" do |f|
+  = f.hidden_field :to_id, value: @to_user.id
+  = f.text_area :content
+  = f.submit "送信", class: "btn btn-primary btn-xs"

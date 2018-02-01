@@ -1,0 +1,10 @@
+p#notice = notice
+
+h1 = @user.display_name
+
+- if @user == current_user
+  = link_to "プロフィール変更", edit_user_registration_path
+-else
+  = link_to "このユーザーとの会話", talk_path
+br
+= link_to '戻る', users_path

@@ -1,0 +1,16 @@
+.btn-group-signup-or-signin {
+    width: 200px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.btn-signup {
+    @extend .btn-primary;
+    display: block;
+    font-weight: bold;
+}
+.btn-signin {
+    @extend .btn-outline-primary;
+    display: block;
+    font-weight: bold;
+}

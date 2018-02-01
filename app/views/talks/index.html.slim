@@ -1,0 +1,12 @@
+h1 トーク一覧
+
+.card
+  ul.list-group.list-group-flush
+    - @talkers.each do |talker|
+      li.list-group-item
+        .talk-summary
+          .username
+            = link_to talker.display_name, talk_path(talker)
+          .last-talk
+            = trim_if_long(Talk.talk_list(current_user, talker).last.content, 50)
+= link_to "新しい友達を探す", users_path
