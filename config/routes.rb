@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  authenticated :user do
+    root "talks#index"
+  end
   root "home#index"
+
   devise_for :users
   resources :talks, only: [:index, :create, :show, :destroy]
   resources :users, only: [:index, :show]
