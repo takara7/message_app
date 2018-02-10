@@ -1,5 +1,5 @@
 .talk class=(current_user == talk.from_user ? "my-talk" : "others-talk")
   .time
-    = talk.created_at.strftime("%m/%d %H:%M")
+    = relative_date_if_this_week(talk.created_at)
   .talk-text
     == html_escape(talk.content).gsub(/\R/, "<br />")
