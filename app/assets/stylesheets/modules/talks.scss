@@ -5,36 +5,58 @@
 }
 
 // show
+$talk-width: 40em;
+
 #talks-container {
     display: flex;
     flex-direction: column;
-    width: 40em;
+    width: $talk-width;
     margin: 0 auto;
+}
+
+.talk {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.my-talk {
+    flex-direction: row;
+
+    .talk-text {
+        background-color: #99ff99;
+    }
+}
+
+.others-talk {
+    flex-direction: row-reverse;
+
+    .talk-text {
+        background-color: #9999ff;
+    }
 }
 
 .time {
     font-size: small;
     color: #666666;
+    margin: 5px;
 }
 
-.talk {
+.talk-text {
     border-radius: 8px;
     max-width: 25em;
     margin: 3px 0;
-    padding: 5px;
+    padding: 4px 8px;
     word-wrap: break-word;
-}
-
-.my-talk {
-    background-color: #99ff99;
-    float: right;
-}
-
-.others-talk {
-    background-color: #9999ff;
-    float: left;
 }
 
 #talk-post-form {
     display: flex;
+    width: $talk-width;
+    margin: 0 auto;
+    padding: 0 .8em;
+
+    textarea {
+        flex: 1;
+    }
 }
