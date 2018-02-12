@@ -5,17 +5,29 @@
     form {
         margin: 0;
     }
+}
 
-    button:hover #text-added {
-        display: none;
+.remove-friend button {
+    @extend .btn-primary;
+
+    #text-added {
+        display: block;
     }
 
     #text-remove {
         display: none;
     }
 
-    button:hover #text-remove {
-        display: block;
+    &:hover {
+        @extend .btn-danger:hover;
+
+        #text-added {
+            display: none;
+        }
+
+        #text-remove {
+            display: block;
+        }
     }
 }
 
