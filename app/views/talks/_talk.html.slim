@@ -2,4 +2,4 @@
   .time
     = relative_date_if_this_week(talk.created_at)
   .talk-text
-    == html_escape(talk.content).gsub(/\R/, "<br />")
+    == message_to_html(talk.content)
