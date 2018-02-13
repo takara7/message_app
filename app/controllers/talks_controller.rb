@@ -35,10 +35,13 @@ class TalksController < ApplicationController
   # DELETE /talks/1
   # DELETE /talks/1.json
   def destroy
-    @talk.destroy
     respond_to do |format|
-      format.html { redirect_to talks_url, notice: 'Talk was successfully destroyed.' }
-      format.json { head :no_content }
+      if @talk.from_user == current_user
+        @talk.destroy
+        format.json { head :no_content }
+      else
+        format.json { head :unauthorized }
+      end
     end
   end
 
