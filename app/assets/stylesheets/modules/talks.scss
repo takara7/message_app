@@ -36,10 +36,18 @@ $talk-width: 40em;
     }
 }
 
-.time {
+.talk-info {
+    $info-color: #666666;
+
     font-size: small;
-    color: #666666;
-    margin: 5px;
+    text-align: right;
+    line-height: 115%;
+    color: $info-color;
+    margin: 4px;
+
+    .delete-link {
+        color: $info-color;
+    }
 }
 
 .talk-text {

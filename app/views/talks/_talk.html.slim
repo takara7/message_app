@@ -1,5 +1,10 @@
-.talk class=(current_user == talk.from_user ? "my-talk" : "others-talk")
-  .time
+- is_my_message = (talk.from_user == current_user)
+.talk class=(is_my_message ? "my-talk" : "others-talk")
+  .talk-info
+    - if is_my_message
+      = link_to "削除", talk_path(talk), method: :delete, class: "delete-link",
+          data: {confirm: "本当に削除しますか？"}, remote: true
+      br
     = relative_date_if_this_week(talk.created_at)
   .talk-text
     == message_to_html(talk.content)
